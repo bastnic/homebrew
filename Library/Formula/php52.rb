@@ -2,9 +2,10 @@ require 'formula'
 
 class Php52 <Formula
   @url='http://www.php.net/get/php-5.2.14.tar.bz2/from/www.php.net/mirror'
-  @version='5.2.14'
+  @url='http://www.php.net/get/php-5.2.17.tar.bz2/from/www.php.net/mirror'
+  @version='5.2.17'
   @homepage='http://php.net/'
-  @md5='bfdfc0e62fe437020cc04078269d1414'
+  @md5='b27947f3045220faf16e4d9158cbfe13'
 
   depends_on 'jpeg'
   depends_on 'freetype'
@@ -46,19 +47,28 @@ Pass --with-mysql  to build with MySQL (PDO) support
         "--enable-mbstring",
         "--enable-mbregex",
         "--enable-sockets",
+        "--enable-soap",
         "--with-iodbc=/usr",
         "--with-curl=/usr",
         "--with-config-file-path=#{prefix}/etc",
         "--sysconfdir=/private/etc",
         "--with-openssl=/usr",
         "--with-xmlrpc",
+        "--enable-sysvmsg",
+        "--enable-sysvsem",
+        "--enable-sysvshm",
         "--with-xsl=/usr",
-        "--without-pear",
+        "--with-gettext=#{HOMEBREW_PREFIX}",
+        "--with-pear",
+        "--with-bz2=/usr",
+        "--enable-calendar",
+        "--enable-bcmath",
         "--with-libxml-dir=/usr",
-        "--with-iconv=#{HOMEBREW_PREFIX}",
+        "--with-iconv=shared,#{HOMEBREW_PREFIX}",
         "--with-gd",
+        "--with-zip",
         "--with-jpeg-dir=#{HOMEBREW_PREFIX}",
-        "--with-png-dir=#{HOMEBREW_PREFIX}/Cellar/libpng/1.2.40",
+        "--with-png-dir=#{HOMEBREW_PREFIX}/Cellar/libpng/1.2.44",
         "--with-freetype-dir=#{HOMEBREW_PREFIX}",
         "--with-mcrypt=#{HOMEBREW_PREFIX}"]
     
